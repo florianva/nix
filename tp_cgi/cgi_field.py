@@ -1,0 +1,16 @@
+import os, cgi
+query_string = os.environ["QUERY_STRING"]
+form = cgi.FieldStorage()
+name = form.getfirst("name", "")
+age = form.getfirst("age","")
+print("Content-type:text/html")
+print("")
+print("<!DOCTYPE html>")
+print("<html>")
+print("<h1>cgi_field</h1>")
+print("<body>")
+print(name+" is "+age+" years old")
+print("</body>")
+print("<br>")
+print("<a href='index.html'>back to index.html</a>")
+print("</html>")
